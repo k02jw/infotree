@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:infotree/model/dummy/dummy_notification.dart';
+import 'package:infotree/model/dummy/dummy_benefits.dart';
 import 'package:infotree/model/user.dart';
 import 'package:infotree/model/user_data.dart';
 import 'package:infotree/view/pages/user_page.dart';
 import 'main_page.dart';
 import 'subscribe_page.dart';
-import 'chat_page.dart';
+import 'search_page.dart';
 import 'map_page.dart';
 import 'package:provider/provider.dart';
 import 'package:infotree/model/data.dart';
-import 'package:infotree/model/notification_data.dart';
+import 'package:infotree/model/benefit_data.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:infotree/view/pages/recommand_page.dart';
+import 'package:infotree/view/pages/channel_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -40,7 +42,7 @@ class _RootPageState extends State<RootPage> {
 
     final List<Widget> pages = [
       SubscribePage(), // 첫 페이지는 즐겨찾기
-      ChatPage(), // 검색
+      RecommandPage(), // 검색
       MainPage(), // 빈 하트
       MapPage(), // 알림
       ProfilePage(), // 프로필
@@ -62,7 +64,7 @@ class _RootPageState extends State<RootPage> {
         showUnselectedLabels: false,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.star_border), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
           BottomNavigationBarItem(
             icon: Icon(Icons.explore_outlined),

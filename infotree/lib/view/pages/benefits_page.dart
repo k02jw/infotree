@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../utils.dart';
-import '../../model/notification_data.dart';
+import '../../model/benefit_data.dart';
 
 class NotificationPage extends StatefulWidget {
-  final NotificationData notification;
+  final BenefitData notification;
 
   const NotificationPage({super.key, required this.notification});
 
@@ -55,7 +55,7 @@ class _NotificationPageState extends State<NotificationPage> {
               const SizedBox(height: 16),
             ],
             Text(
-              noti.name,
+              noti.title,
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),

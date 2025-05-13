@@ -8,6 +8,9 @@ var mainUser = UserData(
   phone: '010-1234-5678',
   major: ['사회학과'],
   channel: [11, 22, 33],
-  keywords: ['코딩', '보드게임', '디지털 드로잉'],
+  categories: ['코딩', '보드게임', '디지털 드로잉'],
   likes: [1, 2, 3, 4],
+  gender: 'male',
+  grade: 3,
+  year: 2002,
 );

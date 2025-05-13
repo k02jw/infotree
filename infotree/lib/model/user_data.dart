@@ -1,13 +1,16 @@
 class UserData {
-  int id;
-  String name;
-  String school;
-  String email;
-  String phone;
-  List<String> major;
-  List<int> channel;
-  List<String> keywords;
-  List<int> likes;
+  final int id;
+  final String name;
+  final String school;
+  final String email;
+  final String phone;
+  final List<String> major;
+  final List<int> channel;
+  final List<String> categories;
+  final List<int> likes;
+  final int year;
+  final String gender;
+  final int grade;
 
   UserData({
     required this.id,
@@ -17,8 +20,11 @@ class UserData {
     required this.phone,
     required this.major,
     required this.channel,
-    required this.keywords,
+    required this.categories,
     required this.likes,
+    required this.year, // New property
+    required this.gender, // New property
+    required this.grade, // New property
   });
 
   factory UserData.fromJson(Map<String, dynamic> json) {
@@ -28,10 +34,13 @@ class UserData {
       school: json['school'],
       email: json['email'],
       phone: json['phone'],
-      major: List<String>.from(json['major']),
-      channel: List<int>.from(json['channel']),
-      keywords: List<String>.from(json['keywords']),
-      likes: List<int>.from(json['likes']),
+      major: List<String>.from(json['major'] ?? []),
+      channel: List<int>.from(json['channel'] ?? []),
+      categories: List<String>.from(json['categories'] ?? []),
+      likes: List<int>.from(json['likes'] ?? []),
+      year: json['year'] ?? 0, // New property
+      gender: json['gender'] ?? '', // New property
+      grade: json['grade'] ?? 0, // New property
     );
   }
 
@@ -44,8 +53,11 @@ class UserData {
       'phone': phone,
       'major': major,
       'channel': channel,
-      'keywords': keywords,
+      'categories': categories,
       'likes': likes,
+      'year': year, // New property
+      'gender': gender, // New property
+      'grade': grade, // New property
     };
   }
 
@@ -57,8 +69,11 @@ class UserData {
     String? phone,
     List<String>? major,
     List<int>? channel,
-    List<String>? keywords,
+    List<String>? categories,
     List<int>? likes,
+    int? year, // New property
+    String? gender, // New property
+    int? grade, // New property
   }) {
     return UserData(
       id: id ?? this.id,
@@ -68,8 +83,11 @@ class UserData {
       phone: phone ?? this.phone,
       major: major ?? this.major,
       channel: channel ?? this.channel,
-      keywords: keywords ?? this.keywords,
+      categories: categories ?? this.categories,
       likes: likes ?? this.likes,
+      year: year ?? this.year, // New property
+      gender: gender ?? this.gender, // New property
+      grade: grade ?? this.grade, // New property
     );
   }
 }

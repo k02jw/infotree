@@ -1,8 +1,8 @@
-import '../notification_data.dart';
+import 'package:infotree/model/benefit_data.dart';
 
-final dummyNoti1 = NotificationData(
+final dummyBenefit1 = BenefitData(
   id: 1,
-  name: '[★동국대학교 X 에듀윌 쉬운 토익 공식 얼리버드 프로모션★]',
+  title: '[★동국대학교 X 에듀윌 쉬운 토익 공식 얼리버드 프로모션★]',
   startDate: DateTime(2025, 4, 8),
   endDate: DateTime(2025, 4, 20),
   description: '''
@@ -17,16 +17,20 @@ final dummyNoti1 = NotificationData(
 자세한 내용은 링크를 통해 확인 바랍니다.
 ''',
   ownerId: 11,
-  channelId: 101, // CAPS
+  private: false,
+  categories: [],
+  channelId: 101,
   image:
       "https://yt3.googleusercontent.com/HwcqRjByAr2qW33Z1UDjUTg-1vKH-NG1S9S7Cdw-O7CSrN0mfYEx5TmB-q3JoUMnLod3OAXNrA=s900-c-k-c0x00ffffff-no-rj",
   link: 'https://forms.gle/jLS9kFPZGA3JwrSNA',
-  likes: 42, // ✅ 랜덤 추가
+  latitude: 37.5563,
+  longitude: 126.9996,
+  likes: 42,
 );
 
-final dummyNoti2 = NotificationData(
+final dummyBenefit2 = BenefitData(
   id: 2,
-  name: '[📢 2025학년도 1학기 국가장학금 2차 신청 안내]',
+  title: '[📢 2025학년도 1학기 국가장학금 2차 신청 안내]',
   startDate: DateTime(2025, 4, 1),
   endDate: DateTime(2025, 4, 18),
   description: '''
@@ -39,16 +43,20 @@ final dummyNoti2 = NotificationData(
 * 재학생은 1차 신청 원칙, 2차는 1회 구제 신청만 허용됩니다.
 ''',
   ownerId: 11,
+  private: false,
+  categories: [],
   channelId: 201,
   image:
       "https://yt3.googleusercontent.com/HwcqRjByAr2qW33Z1UDjUTg-1vKH-NG1S9S7Cdw-O7CSrN0mfYEx5TmB-q3JoUMnLod3OAXNrA=s900-c-k-c0x00ffffff-no-rj",
   link: 'https://www.kosaf.go.kr',
+  latitude: 37.5573,
+  longitude: 126.9986,
   likes: 17,
 );
 
-final dummyNoti3 = NotificationData(
+final dummyBenefit3 = BenefitData(
   id: 3,
-  name: '[🍜 동국대 학생증 제시 시 제휴 음식점 할인 안내]',
+  title: '[🍜 동국대 학생증 제시 시 제휴 음식점 할인 안내]',
   startDate: DateTime(2025, 4, 5),
   endDate: DateTime(2025, 6, 30),
   description: '''
@@ -63,30 +71,38 @@ final dummyNoti3 = NotificationData(
 복지 혜택, 꼭 챙기세요!
 ''',
   ownerId: 11,
+  private: false,
+  categories: [],
   channelId: 102,
   image:
       "https://yt3.googleusercontent.com/HwcqRjByAr2qW33Z1UDjUTg-1vKH-NG1S9S7Cdw-O7CSrN0mfYEx5TmB-q3JoUMnLod3OAXNrA=s900-c-k-c0x00ffffff-no-rj",
   link: null,
+  latitude: null,
+  longitude: null,
   likes: 63,
 );
 
-final dummyNoti4 = NotificationData(
+final dummyBenefit4 = BenefitData(
   id: 4,
-  name: '동국대학생 아메리카노 10% 할인',
+  title: '동국대학생 아메리카노 10% 할인',
   startDate: DateTime.now(),
   endDate: DateTime.now().add(Duration(days: 10)),
   description: '빨리 오세요',
   ownerId: 11,
+  private: false,
+  categories: [],
   channelId: 101,
   image:
       "https://yt3.googleusercontent.com/HwcqRjByAr2qW33Z1UDjUTg-1vKH-NG1S9S7Cdw-O7CSrN0mfYEx5TmB-q3JoUMnLod3OAXNrA=s900-c-k-c0x00ffffff-no-rj",
   link: 'https://forms.gle/...',
+  latitude: null,
+  longitude: null,
   likes: 42,
 );
 
-List<NotificationData> dummyNotifications = [
-  dummyNoti1,
-  dummyNoti2,
-  dummyNoti3,
-  dummyNoti4,
+List<BenefitData> dummyBenefits = [
+  dummyBenefit1,
+  dummyBenefit2,
+  dummyBenefit3,
+  dummyBenefit4,
 ];

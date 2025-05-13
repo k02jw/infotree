@@ -55,6 +55,8 @@
 	<key>com.google.android.geo.API_KEY</key>
 	<string>AIzaSyChLPYauNnwQ3hVSk-ZzEBJd68C_caPjMI</string>
 
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to location when open.</string>
 
 </dict>
 </plist>
