@@ -5,15 +5,10 @@ import 'package:infotree/model/user_data.dart';
 import 'package:infotree/view/pages/user_page.dart';
 import 'main_page.dart';
 import 'subscribe_page.dart';
-import 'search_page.dart';
 import 'map_page.dart';
 import 'package:provider/provider.dart';
 import 'package:infotree/model/data.dart';
-import 'package:infotree/model/benefit_data.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:infotree/view/pages/recommand_page.dart';
-import 'package:infotree/view/pages/channel_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});

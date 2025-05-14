@@ -48,17 +48,11 @@ class _MapListViewState extends State<MapListView> {
             '${item.startDate.year}.${item.startDate.month}.${item.startDate.day} ~ '
             '${item.endDate.year}.${item.endDate.month}.${item.endDate.day}',
           ),
-          trailing: IconButton(
-            icon: Icon(
-              isLiked ? Icons.favorite : Icons.favorite_border,
-              color: isLiked ? Colors.red : Colors.grey,
-            ),
-            onPressed: () {
-              setState(() {
-                likedStates[index] = !isLiked;
-              });
-            },
+          trailing: Icon(
+            isLiked ? Icons.favorite : Icons.favorite_border,
+            color: isLiked ? Colors.red : Colors.grey,
           ),
+
           onTap: () {
             widget.onItemTap?.call(item);
           },

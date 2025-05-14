@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../utils.dart';
-import '../../model/benefit_data.dart';
+import 'package:infotree/model/benefit_data.dart';
+import 'package:infotree/model/user.dart';
+import 'package:infotree/model/data.dart';
 
 class NotificationPage extends StatefulWidget {
   final BenefitData notification;
@@ -19,7 +22,7 @@ class _NotificationPageState extends State<NotificationPage> {
   void initState() {
     super.initState();
     likes = widget.notification.likes;
-    liked = false;
+    liked = context.read<Data>().user.likes.contains(widget.notification.id);
   }
 
   void toggleLike() {

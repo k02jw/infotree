@@ -51,7 +51,6 @@ class _MapPageState extends State<MapPage> {
         final base = _currentLocation ?? const LatLng(37.5563, 126.9996);
         final distance = const Distance();
 
-        // ✅ 전체 benefitGroups에서 위치 있는 항목만 모아서 정렬
         final benefits =
             data.benefitGroups.values
                 .expand((list) => list)
