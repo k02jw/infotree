@@ -48,9 +48,18 @@ export async function savePostToBenefits(post) {
   }
 }
 
+async function titlecheck(title) {
+    const query = `select 1 from benefits where title = $1 limit 1`;
+    const { rows } = await pool.query(query, [title]);
+    return rows.length > 0;
+}
+
 // 전체 저장 처리
-export async function saveAllPosts(posts) {
-  for (const post of posts) {
-    await savePostToBenefits(post);
-  }
+async function saveAllPosts(posts) {
+    for (const post of posts) {
+        const titleexits = await titlecheck(post.title);
+        if (!titleexits) {
+            await savePostToBenefits(post);
+        }
+    }
 }
