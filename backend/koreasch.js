@@ -70,12 +70,19 @@ async function savePostToBenefits(post) {
     console.error(`❌ -- 저장 오류: ${post['운영기관명']} --`, err.message);
   }
 }
-
+async function titlecheck(title) {
+    const query = `select 1 from benefits where title = $1 limit 1`;
+    const { rows } = await pool.query(query, [title]);
+    return rows.length > 0;
+}
 // 전체 저장 처리
 async function saveAllPosts(posts) {
-  for (const post of posts) {
-    await savePostToBenefits(post);
-  }
+    for (const post of posts) {
+        const titleexits = await titlecheck(post.title);
+        if (!titleexits) {
+            await savePostToBenefits(post);
+        }
+    }
 }
 
 export async function krcrawl() {
