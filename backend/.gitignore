@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv
+.env
+.env.*
+
+# MacOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Puppeteer / Playwright downloads
+.chromium/
+
+# OS files
+Thumbs.db
+
+# Optional:
+*.sqlite
+*.db
+*.pyc
+__pycache__/

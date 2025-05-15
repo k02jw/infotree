@@ -2,6 +2,7 @@ import express from 'express';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import pg from 'pg';
+import { crawl } from './index.js';
 
 const { Pool } = pg;
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -28,6 +29,10 @@ app.listen(app.get('port'), () => {
 // 페이지 렌더
 app.get('/', (req, res) => {
   res.render('index.ejs');
+});
+
+app.get('/crawl', async (req, res) => {
+  await crawl();
 });
 
 app.get('/users/:id', async (req, res) => {

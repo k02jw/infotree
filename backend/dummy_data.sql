@@ -90,15 +90,6 @@ INSERT INTO benefits (
  NULL, NULL, NULL, NULL, 0
 );
 
--- LOGS
-INSERT INTO logs (user_id, benefit_id)
-VALUES 
-  (1, 1),
-  (1, 2),
-  (1, 3),
-  (1, 4);
-
-
 INSERT INTO benefits (
   id, title, start_date, end_date, description,
   private, categories, channel_id,
@@ -116,4 +107,14 @@ INSERT INTO benefits (
  'https://yt3.googleusercontent.com/HwcqRjByAr2qW33Z1UDjUTg-1vKH-NG1S9S7Cdw-O7CSrN0mfYEx5TmB-q3JoUMnLod3OAXNrA=s900-c-k-c0x00ffffff-no-rj',
  'https://forms.gle/jLS9kFPZGA3JwrSNA',
  NULL, NULL, 42
-),
+)
+
+-- LOGS
+INSERT INTO logs (user_id, benefit_id)
+VALUES 
+  (1, 1),
+  (1, 2),
+  (1, 3),
+  (1, 4);
+
+

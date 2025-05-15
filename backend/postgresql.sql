@@ -16,20 +16,23 @@ CREATE TABLE users (
 
 
 CREATE TABLE benefits (
-  id SERIAL PRIMARY KEY,              -- 공지 ID (자동 증가)
-  title TEXT NOT NULL,                -- 제목
-  start_date TIMESTAMP NOT NULL,      -- 시작일
-  end_date TIMESTAMP NOT NULL,        -- 종료일
-  description TEXT NOT NULL,          -- 설명
-  private BOOLEAN,                    -- 비공개 여부
-  categories TEXT[] NOT NULL,         -- 카테고리 (문자열 배열)
-  channel_id INTEGER NOT NULL,              -- 소속 채널 ID
-  image TEXT,                         -- 이미지 링크 (nullable)
-  link TEXT,                          -- 외부 링크 (nullable)
-  latitude DOUBLE PRECISION,          -- 위도 (nullable)
-  longitude DOUBLE PRECISION,         -- 경도 (nullable)
-  likes INTEGER DEFAULT 0             -- 좋아요 수 (기본 0)
+  id SERIAL PRIMARY KEY,                -- 공지 ID (자동 증가)
+  title TEXT NOT NULL UNIQUE,           -- 제목 (중복 불가)
+  start_date TIMESTAMP NOT NULL,        -- 시작일
+  end_date TIMESTAMP NOT NULL,          -- 종료일
+  description TEXT NOT NULL,            -- 설명
+  private BOOLEAN,                      -- 비공개 여부
+  categories TEXT[] NOT NULL,           -- 카테고리 (문자열 배열)
+  channel_id INTEGER NOT NULL,          -- 소속 채널 ID
+  image TEXT,                           -- 이미지 링크 (nullable)
+  link TEXT UNIQUE,                     -- 외부 링크 (중복 불가)
+  latitude DOUBLE PRECISION,            -- 위도 (nullable)
+  longitude DOUBLE PRECISION,           -- 경도 (nullable)
+  likes INTEGER DEFAULT 0               -- 좋아요 수 (기본 0)
 );
+
+
+
 
 CREATE TABLE logs (
   id SERIAL PRIMARY KEY,           -- 로그 고유 ID (자동 증가)
