@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { cheerio } from 'cheerio';
+import { load } from 'cheerio';
 import {classifyText}  from './llm.js';
 
 async function detailsite(title, link) {
     const response = await axios.get(link);
-    const $ = cheerio.load(response.data);
+    const $ = load(response.data);
     const rawtext = $('body').text();
     const result = await classifyText(rawtext,link);
     return result;
@@ -13,7 +13,7 @@ async function detailsite(title, link) {
 async function crawlSingleSite(num, checker) {
     const url = `https://www.dongguk.edu/article/JANGHAKNOTICE/list?pageindex${num}`;
     const response = await axios.get(url);
-    const $ = cheerio.load(response.data);
+    const $ = load(response.data);
     const result = [];
     const elements = $('div.board_list > ul > li').toArray();
 
@@ -36,7 +36,7 @@ async function crawlSingleSite(num, checker) {
     return result;
 }
 
-async function crawl_dgujanghak(pagenum) {
+export async function crawl_dgujanghak(pagenum) {
     let nownum = 1;
     let allresults = [];
     let checker = new Set();
@@ -49,4 +49,3 @@ async function crawl_dgujanghak(pagenum) {
     return allresults;
 }
 
-export { crawl_dgujanghak };
