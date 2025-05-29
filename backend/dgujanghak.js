@@ -1,6 +1,6 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
-const {classifyText}  =  require('./llm.js');
+import axios from 'axios';
+import { cheerio } from 'cheerio';
+import {classifyText}  from './llm.js';
 
 async function detailsite(title, link) {
     const response = await axios.get(link);
@@ -49,4 +49,4 @@ async function crawl_dgujanghak(pagenum) {
     return allresults;
 }
 
-module.exports = { crawl_dgujanghak };
+export { crawl_dgujanghak };
